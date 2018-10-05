@@ -10,10 +10,10 @@
 <c:if test="${rCnt==1}">
 <script>
 		alert("저장성공");
-		location.href="/ict4/levelInfo";
+		location.href="/levelInfo";
 </script>
 	</c:if>
-<form action="/ict4/insertLevel" method="post">
+<form action="/insertLevel" method="post">
 	liname : <input type="text" name="liname"><br>
 	lilevel : <input type="text" name="lilevel"><br>
 	lidesc : <input type="text" name="lidesc"><br>
