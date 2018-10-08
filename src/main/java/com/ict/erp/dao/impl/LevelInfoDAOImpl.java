@@ -41,8 +41,7 @@ public class LevelInfoDAOImpl implements LevelInfoDAO {
 
 	@Override
 	public int updateLevelInfo(LevelInfo li) {
-		// TODO Auto-generated method stub
-		return 0;
+		return ss.update("SQL.LEVELINFO.updateLevelInfo", li);
 	}
 
 }

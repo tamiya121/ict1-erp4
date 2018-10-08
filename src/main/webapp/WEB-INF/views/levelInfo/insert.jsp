@@ -13,7 +13,7 @@
 		location.href="/levelInfo";
 </script>
 	</c:if>
-<form action="/insertLevel" method="post">
+<form action="/levelInfo" method="post">
 	liname : <input type="text" name="liname"><br>
 	lilevel : <input type="text" name="lilevel"><br>
 	lidesc : <input type="text" name="lidesc"><br>
