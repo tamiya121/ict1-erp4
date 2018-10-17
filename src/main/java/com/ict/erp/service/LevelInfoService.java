@@ -13,4 +13,5 @@ public interface LevelInfoService {
 	public int deleteLevelInfo(int linum);
 	public LevelInfo getLevelInfo(Integer linum);
 	public int updateLevelInfo(LevelInfo li);
+	public int testTransaction(LevelInfo li);
 }

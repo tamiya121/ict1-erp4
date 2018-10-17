@@ -47,4 +47,12 @@ public class LevelInfoServiceImpl implements LevelInfoService {
 		return lidao.updateLevelInfo(li);
 	}
 
+	@Override
+	public int testTransaction(LevelInfo li) {
+		// TODO Auto-generated method stub
+		int cnt  = lidao.updateLevelInfo(li);
+		cnt = lidao.insertLevelInfo(li);
+		return cnt;
+	}
+
 }

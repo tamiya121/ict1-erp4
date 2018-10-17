@@ -50,12 +50,14 @@ public class LevelInfoController {
 		return lis.deleteLevelInfo(linum)+"";
 	}
 	
-	@RequestMapping(value="/levelinfos",method=RequestMethod.PUT)
+	@RequestMapping(value="/levelInfo2/{linum}",method=RequestMethod.PUT)
 	@ResponseBody
-	public Integer deleteLevelInfoList(@RequestBody List<LevelInfo> delList) {
-		System.out.println(delList);
-		return delList.size();
+	public Integer testLevelInfo(@RequestBody LevelInfo li, @PathVariable Integer linum) {
+		li.setLinum(linum);
+		return lis.testTransaction(li);
 	}
+	
+	
 }
 		
 		
