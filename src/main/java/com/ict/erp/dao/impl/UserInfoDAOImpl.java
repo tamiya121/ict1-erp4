@@ -32,7 +32,8 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 
 	@Override
 	public UserInfo getUserInfoList(Integer uiNum) {
-		return ss.selectOne("SQL,USERINFO.selectUserInfo",uiNum);
+		
+		return ss.selectOne("SQL.USERINFO.selectUserInfo",uiNum);
 	}
 
 	@Override

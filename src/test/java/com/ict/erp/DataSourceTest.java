@@ -36,6 +36,13 @@ public class DataSourceTest {
 	private SqlSession ss;
 
 	@Test
+	public void ssTest() {
+		assertNotNull(ss);
+		List<LevelInfo> liList = ss.selectList("SQL.LEVELINFO.selectLevelInfo");
+		assertEquals(4, liList.size());
+	}
+	
+	@Test
 	public void test() {
 		try {
 			Connection con = ds.getConnection();
@@ -54,13 +61,8 @@ public class DataSourceTest {
 			fail(e.getMessage());
 		}
 	}
-//	
-//	@Test
-//	public void ssTest() {
-//		assertNotNull(ss);
-//		List<LevelInfo> liList = ss.selectList("SQL.LEVELINFO.selectLevelInfo");
-//		assertEquals(liList.size(), 5);
-//	}
+	
+	
 //	@Test
 //	public void insertTest() {
 //		LevelInfo li = new LevelInfo();

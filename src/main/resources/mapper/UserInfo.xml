@@ -14,6 +14,11 @@
     </where>
     order by uiNum
   </select>
+  
+  <select id="selectUserInfoOne" resultType="int">
+    select * from User_info1 where uiNum = #{uiNum} order by uiNum
+  </select>
+  
   <insert id="insertUserInfo" parameterType="ui">
   	insert into User_info1(uiNum, uiName, uiId, uiPwd, uiDesc)
   	values(seq_info.nextval, #{uiName}, #{uiId}, #{uiPwd}, #{uiDesc})

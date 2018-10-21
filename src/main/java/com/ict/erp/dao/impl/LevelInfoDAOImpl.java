@@ -36,7 +36,7 @@ public class LevelInfoDAOImpl implements LevelInfoDAO {
 	@Override
 	public LevelInfo getLevelInfoList(Integer linum) {
 		// TODO Auto-generated method stub
-		return ss.selectOne("SQL,LEVELINFO.selectLevelInfo",linum);
+		return ss.selectOne("SQL.LEVELINFO.selectLevelInfoOne",linum);
 	}
 
 	@Override
