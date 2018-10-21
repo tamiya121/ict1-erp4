@@ -1,11 +1,15 @@
 package com.ict.erp;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -35,8 +39,31 @@ public class Test1 {
 	public void uidaoTest() {
 		
 		List<UserInfo> uiList = uidao.getUserInfoList(null);
-		assertEquals(2, uidao.getUserInfoList(null));
+		assertEquals(2, uiList.size());
+	}
+	
+	@Test
+	public void uis() {
+		UserInfo ui = uis.getUserInfo(1);
+		assertNotNull(ui);
+	}
+	
+	@Test
+	public void uis0() {
+		UserInfo ui = uis.getUserInfo(0);
+		assertNull(ui);
 	}
 
+	@Test
+	public void uidao() {
+		UserInfo ui = uis.getUserInfo(1);
+		assertNotNull(ui);
+	}
+	
+	@Test
+	public void uidao0() {
+		UserInfo ui = uis.getUserInfo(0);
+		assertNull(ui);
+	}
 
 }
