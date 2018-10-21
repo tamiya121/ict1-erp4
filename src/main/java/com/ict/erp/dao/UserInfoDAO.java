@@ -11,6 +11,6 @@ public interface UserInfoDAO {
 	public List<UserInfo> getUserInfoList(UserInfo ui);
 	public int insertUserInfo(UserInfo ui);
 	public int deleteUserInfo(int uiNum);
-	public UserInfo getUserInfoList(Integer uiNum);
+	public UserInfo getUserInfo(Integer uiNum);
 	public int updateUserInfo(UserInfo ui);
 }

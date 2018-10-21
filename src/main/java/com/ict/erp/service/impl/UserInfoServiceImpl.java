@@ -32,7 +32,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
 	@Override
 	public UserInfo getUserInfo(Integer uiNum) {
-		return lidao.getUserInfoList(uiNum);
+		return lidao.getUserInfo(uiNum);
 	}
 
 	@Override

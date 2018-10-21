@@ -32,7 +32,7 @@ public class UserInfoController {
 	
 	@RequestMapping(value="/userInfo", method=RequestMethod.POST)
 	@ResponseBody
-	public Integer insertUserIfo(@RequestBody UserInfo ui) {
+	public Integer insertUserInfo(@RequestBody UserInfo ui) {
 		System.out.println(ui);
 		return uis.insertUserInfo(ui);
 	}
@@ -49,9 +49,6 @@ public class UserInfoController {
 	public String deleteUserInfo(@PathVariable int uiNum) {
 		return uis.deleteUserInfo(uiNum)+"";
 	}
-	
-	
-	
 	
 }
 		
