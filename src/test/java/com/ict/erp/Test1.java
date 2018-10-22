@@ -24,46 +24,37 @@ public class Test1 {
 
 	@Autowired
 	private UserInfoService uis;
-	
 	@Autowired
 	private UserInfoDAO uidao;
-	
 	@Test
-	public void uisTest() {
-		
+	public void userInfoServiceTest() {
 		List<UserInfo> uiList = uis.getUserInfoList(null);
-		assertEquals(2, uiList.size());
+		assertEquals(1, uiList.size());
 	}
-	
 	@Test
-	public void uidaoTest() {
+	public void userInfoDAOTest() {
 		
 		List<UserInfo> uiList = uidao.getUserInfoList(null);
-		assertEquals(2, uiList.size());
+		assertEquals(1, uiList.size());
 	}
-	
 	@Test
-	public void uis() {
+	public void userInfoServiceNotNullTest() {
 		UserInfo ui = uis.getUserInfo(1);
 		assertNotNull(ui);
 	}
-	
 	@Test
-	public void uis0() {
+	public void userInfoServiceNullTest() {
 		UserInfo ui = uis.getUserInfo(0);
 		assertNull(ui);
 	}
-
 	@Test
-	public void uidao() {
-		UserInfo ui = uis.getUserInfo(1);
+	public void userInfoDAONotNullTest() {
+		UserInfo ui = uidao.getUserInfo(1);
 		assertNotNull(ui);
 	}
-	
 	@Test
-	public void uidao0() {
-		UserInfo ui = uis.getUserInfo(0);
+	public void userInfoDAONullTest() {
+		UserInfo ui = uidao.getUserInfo(0);
 		assertNull(ui);
 	}
-
 }

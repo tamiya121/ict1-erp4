@@ -15,7 +15,7 @@
     order by uiNum
   </select>
   
-  <select id="selectUserInfoOne" resultType="int">
+  <select id="selectUserInfoOne" resultType="ui" parameterType="int">
     select * from User_info1 where uiNum = #{uiNum} order by uiNum
   </select>
   
