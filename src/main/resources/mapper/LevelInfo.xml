@@ -27,7 +27,7 @@
   	values(seq_linum.nextval, #{lilevel}, #{liname}, #{lidesc})
   </insert>
   
-  <insert id="insertLevelInfoList" parameterType="liList">
+  <insert id="insertLevelInfoList" parameterType="li">
   	insert into level_info(linum, lilevel, liname, lidesc)
   	values(#{linum}, #{lilevel}, #{liname}, #{lidesc})
   </insert>

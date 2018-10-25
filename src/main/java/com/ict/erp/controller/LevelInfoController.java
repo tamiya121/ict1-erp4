@@ -36,11 +36,11 @@ public class LevelInfoController {
 			return lis.getLevelInfo(linum);
 		}
 	
-	@RequestMapping(value="/levelInfo", method=RequestMethod.POST)
+	@RequestMapping(value="/levelInfos", method=RequestMethod.POST)
 	@ResponseBody
-	public Integer insertLevelInfoList(@RequestBody List<LevelInfo> liList) {
+	public Integer insertLevelInfoList(@RequestBody List<LevelInfo> li) {
 		
-		return lis.insertLevelInfoList(liList);
+		return lis.insertLevelInfoList(li);
 	}
 	
 	

@@ -51,8 +51,11 @@ public class LevelInfoDAOImpl implements LevelInfoDAO {
 
 	@Override
 	public Integer insertLevelInfoList(List<LevelInfo> liList) {
-		
-		return ss.insert("SQL.LEVELINFO.insertLevelInfoList",liList);
+		int cnt = 0;
+		for(LevelInfo li : liList) {
+			cnt += ss.insert("SQL.LEVELINFO.insertLevelInfo",li);
+		}
+		return cnt;
 	}
 
 }

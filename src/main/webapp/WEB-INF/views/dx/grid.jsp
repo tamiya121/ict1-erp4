@@ -10,9 +10,29 @@
 </head>
 <script>
 	/* var data = [{linum:1,lilevel:3,liname:'test',lidesc:'testdata'}]; */
-	 var mData = [{id:'delete',text:'delete'},
+	var newRowId = [];
+	var mData = [{id:'delete',text:'delete'},
 		{id:'add',text:'Add Row'}];
 	var dxGrid,dxMenu;
+	function save() {
+		var addRows = [];
+		for(var i = 0; i < newRowsId.length; i++) {
+			if(dxGrid.getRowAttribute(newRowsId[i],'st') == 'new') {
+				addRows[addRows.length] = dxGrid.getRowData(newRowsId[i]);
+			}
+		}
+		console.log(addRows);
+		
+		var ajaxUtil = new AjaxUtil({
+			url : '/levelInfo',
+			method : 'POST',
+			param : JSON.stringify(addRows),
+			success : function(res) {
+				alert(res + '갯수의 행이 정상적으로 추가됨');
+				newRowsId = [];
+			}
+		});
+	
 	function doInit() {
 		dxMenu = new dhtmlXMenuObject();
 		dxMenu.setIconsPath("../common/images/");
@@ -52,6 +72,7 @@
 			var data = JSON.parse(res.xmlDoc.responseText);
 			dxGrid.parse(data,'js');
 		})
+		initListWithDHTMLX();
 		dxGrid.attachEvent('onEditCell',function(stage,rId,cInd,nValue,oValue){
 			if(stage==2){
 				if(dxGrid.getRowAttribute(rId,"st")=='new'){
@@ -76,14 +97,21 @@
 		})
 		
 	}
+	function initListWithDHTMLX() {
+		dhx.ajax.get('/levelInfo', function(res){
+			var data = JSON.parse(res.xmlDoc.responseText);
+			dxGrid.parse(data, 'js');
+		});
+	}
+	
 	function makeParams(data){
 		var params = '';
 		for(var key in data){
 			params += key + '=' + data[key] + '&';
-		}
+		};
 		return params.substring(0,params.length-1);
 	}
-	window.addEventListener('load',doInit);
+/* 	window.addEventListener('load',doInit); */
 	
 	 
 	
@@ -150,5 +178,5 @@
 <body>
 	<div id="dxGrid" style="width:400px;height:300px;"></div>
 </body>
-	<button onclick="addLevelInfo()">레벨추가</button>
+	
 </html>
