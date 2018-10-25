@@ -18,12 +18,22 @@
     select * from level_info where linum = #{linum} order by linum
   </select>
   
+  <select id="selectLinum" resultType="int">
+  	select seq_linum.nextval as linum from dual
+  </select>
+  
   <insert id="insertLevelInfo" parameterType="li">
   	insert into level_info(linum, lilevel, liname, lidesc)
   	values(seq_linum.nextval, #{lilevel}, #{liname}, #{lidesc})
   </insert>
+  
+  <insert id="insertLevelInfoList" parameterType="liList">
+  	insert into level_info(linum, lilevel, liname, lidesc)
+  	values(#{linum}, #{lilevel}, #{liname}, #{lidesc})
+  </insert>
+  
   <update id="updateLevelInfo" parameterType="li">
-	  update  level_info 
+	  update level_info 
 	  <set>
 	  		<if test="lilevel!=null">lilevel = #{lilevel},</if>
 	  		<if test="liname!=null">liname = #{liname},</if>

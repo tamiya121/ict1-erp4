@@ -55,4 +55,15 @@ public class LevelInfoServiceImpl implements LevelInfoService {
 		return cnt;
 	}
 
+	@Override
+	public int getLinum() {
+		return lidao.getLinum();
+	}
+
+	@Override
+	public Integer insertLevelInfoList(List<LevelInfo> liList) {
+		
+		return lidao.insertLevelInfoList(liList);
+	}
+
 }

@@ -20,6 +20,12 @@ public class LevelInfoController {
 	@Autowired
 	private LevelInfoService lis;
 	
+	@RequestMapping(value="/linum",method=RequestMethod.GET)
+	public @ResponseBody Integer getLinum() {
+		return lis.getLinum();
+	}
+	
+	
 	@RequestMapping(value="/levelInfo",method=RequestMethod.GET)
 	public @ResponseBody List<LevelInfo> getLevelInfoList(@ModelAttribute LevelInfo li) {
 		return lis.getLevelInfoList(li);
@@ -32,7 +38,15 @@ public class LevelInfoController {
 	
 	@RequestMapping(value="/levelInfo", method=RequestMethod.POST)
 	@ResponseBody
-	public Integer insertLevelIfo(@RequestBody LevelInfo li) {
+	public Integer insertLevelInfoList(@RequestBody List<LevelInfo> liList) {
+		
+		return lis.insertLevelInfoList(liList);
+	}
+	
+	
+	@RequestMapping(value="/levelInfo", method=RequestMethod.POST)
+	@ResponseBody
+	public Integer insertLevelInfo(@RequestBody LevelInfo li) {
 		System.out.println(li);
 		return lis.insertLevelInfo(li);
 	}

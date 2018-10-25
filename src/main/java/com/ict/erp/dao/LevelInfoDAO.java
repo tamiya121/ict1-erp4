@@ -11,4 +11,6 @@ public interface LevelInfoDAO {
 	public int deleteLevelInfo(int linum);
 	public LevelInfo getLevelInfoList(Integer linum);
 	public int updateLevelInfo(LevelInfo li);
+	public int getLinum();
+	public Integer insertLevelInfoList(List<LevelInfo> liList);
 }
