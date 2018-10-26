@@ -10,7 +10,7 @@
 </head>
 <script>
 	/* var data = [{linum:1,lilevel:3,liname:'test',lidesc:'testdata'}]; */
-	var newRowId = [];
+	var newRowsId = [];
 	var mData = [{id:'delete',text:'delete'},
 		{id:'add',text:'Add Row'}];
 	var dxGrid,dxMenu;
@@ -24,7 +24,7 @@
 		console.log(addRows);
 		
 		var ajaxUtil = new AjaxUtil({
-			url : '/levelInfo',
+			url : '/levelInfos',
 			method : 'POST',
 			param : JSON.stringify(addRows),
 			success : function(res) {
@@ -32,6 +32,7 @@
 				newRowsId = [];
 			}
 		});
+	}
 	
 	function doInit() {
 		dxMenu = new dhtmlXMenuObject();
@@ -54,6 +55,7 @@
 				dhx.ajax.get('/linum',function(res){
 					var data = JSON.parse(res.xmlDoc.responseText);
 					var rId = dxGrid.uid();
+					//newRowId[newRowId.length]=rId;
 					dxGrid.addRow(rId,[data],dxGrid.getRowsNum());
 					dxGrid.setRowAttribute(rId,"st","new");
 				})
@@ -82,7 +84,7 @@
 					var rData = dxGrid.getRowData(rId);
 					console.log(rData);
 					var ajaxUtil = new AjaxUtil({
-						url : '/levelInfo/' + rData.linum ,
+						url : '/levelInfo/' + rData.linum,
 						method : 'PUT',
 						param : JSON.stringify(rData),
 						success : function(res) {
@@ -97,6 +99,7 @@
 		})
 		
 	}
+	
 	function initListWithDHTMLX() {
 		dhx.ajax.get('/levelInfo', function(res){
 			var data = JSON.parse(res.xmlDoc.responseText);
@@ -108,12 +111,12 @@
 		var params = '';
 		for(var key in data){
 			params += key + '=' + data[key] + '&';
-		};
+		}
 		return params.substring(0,params.length-1);
 	}
-/* 	window.addEventListener('load',doInit); */
 	
-	 
+ 	window.addEventListener('load',doInit); 
+	
 	
 	
 	
@@ -175,8 +178,10 @@
 	
 
 </script>
+
 <body>
 	<div id="dxGrid" style="width:400px;height:300px;"></div>
+	<button onclick="save()">저장</button>
 </body>
 	
 </html>

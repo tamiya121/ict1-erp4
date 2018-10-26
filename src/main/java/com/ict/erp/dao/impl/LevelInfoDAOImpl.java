@@ -53,7 +53,7 @@ public class LevelInfoDAOImpl implements LevelInfoDAO {
 	public Integer insertLevelInfoList(List<LevelInfo> liList) {
 		int cnt = 0;
 		for(LevelInfo li : liList) {
-			cnt += ss.insert("SQL.LEVELINFO.insertLevelInfo",li);
+			cnt += ss.insert("SQL.LEVELINFO.insertLevelInfoList",li);
 		}
 		return cnt;
 	}

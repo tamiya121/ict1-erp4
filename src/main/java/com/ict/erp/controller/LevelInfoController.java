@@ -38,9 +38,9 @@ public class LevelInfoController {
 	
 	@RequestMapping(value="/levelInfos", method=RequestMethod.POST)
 	@ResponseBody
-	public Integer insertLevelInfoList(@RequestBody List<LevelInfo> li) {
+	public Integer insertLevelInfoList(@RequestBody List<LevelInfo> liList) {
 		
-		return lis.insertLevelInfoList(li);
+		return lis.insertLevelInfoList(liList);
 	}
 	
 	
