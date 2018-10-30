@@ -159,8 +159,8 @@
 		<!-- Hikaricp -->
 		<dependency>
 			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>2.7.9</version>
+			<artifactId>HikariCP-java7</artifactId> <!-- 기존에 있던 거 <artifactId>HikariCP</artifactId> -->
+			<version>2.4.13</version> <!-- 기존 버전 2.7.9 -->
 		</dependency>
 		<!-- mybatis -->
 		<dependency>
@@ -258,7 +258,10 @@
 		    <version>1.1</version>
 		    <scope>provided</scope>
 		</dependency>
-		
-		
 	</dependencies>
-</project>
+		
+		<!-- 이거 추가됨 -->
+		<build>
+			<finalName>ict</finalName>
+		</build>
+</project>		
