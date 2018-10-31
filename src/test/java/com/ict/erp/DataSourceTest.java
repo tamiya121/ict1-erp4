@@ -1,4 +1,4 @@
-package com.ict.erp;
+/*package com.ict.erp;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -88,3 +88,4 @@ public class DataSourceTest {
 //		assertEquals(ss.insert("SQL.LEVELINFO.deleteLevelInfo",li), 1);
 //	}
 }
+*/
