@@ -1,4 +1,4 @@
-package com.ict.erp;
+/*package com.ict.erp;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -58,3 +58,4 @@ public class Test1 {
 		assertNull(ui);
 	}
 }
+*/

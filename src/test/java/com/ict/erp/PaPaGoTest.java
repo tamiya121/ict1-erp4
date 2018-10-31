@@ -1,4 +1,4 @@
-package com.ict.erp;
+/*package com.ict.erp;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -63,3 +63,4 @@ public class PaPaGoTest {
 	}
 
 }
+*/

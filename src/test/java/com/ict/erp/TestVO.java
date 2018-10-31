@@ -1,4 +1,4 @@
-package com.ict.erp;
+/*package com.ict.erp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,3 +18,4 @@ public class TestVO {
 	private String t3;
 	private String t4;
 }
+*/
