@@ -1,31 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-String content = "/url/qq:";
-if(request.getParameter("page") != null) {
-	content += request.getParameter("page");
-}else{
+String content = "/qq/";
+String param = request.getParameter("page");
+if(param == null) {
 	content += "r1";
+}else{
+	content += param;
+
 }
+content += ".jsp";
 %>
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 
 </head>
 <body>
-<div class="include-wrapper"
-style="width:500px">
-<div class="left"
-style = "float:left;width:100px">
-<jsp:include page="/url/qq:left"
-flush="false"/>
-</div>
-<div class="right"
-style ="float:right;width:100px">
-<jsp:include page="<%=content %>"
-flush="false"/>
-</div>
-</div>
+	<div class="wrapper" style="width:500px">
+	<div class="left" style="float:left;width:100px">
+	<jsp:include page="/qq/left.jsp" flush="false" />
+	</div>
+	<div class="right" style="float:right;width:100px">
+	<jsp:include page="<%=content %>" flush = "false" />
+	</div>
+	</div>
 </body>
 </html>
+ 

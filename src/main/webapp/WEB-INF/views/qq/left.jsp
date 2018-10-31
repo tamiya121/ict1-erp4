@@ -1,12 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+
+
 </head>
 <body>
-
+	<% 
+	String param = request.getParameter("page");
+	String r1 = null;
+	String r2 = null;
+	String r3 = null;
+	if(param == null || param.isEmpty()) {
+		r1 = "selected";
+	}else {
+		if(param.equals("r1")){
+			r1 = "selected";
+	}else if(param.equals("r2")){
+		r2= "selected";
+	}else if(param.equals("r3")){
+		r3 = "selected";
+	}
+		}
+	
+	%>
+	<form id="left">
+		<select name="page" onchange = "this.form.submit()">
+			<option value="r1"<%=r1%>>r1</option>
+			<option value="r2"<%=r2%>>r2</option>
+			<option value="r3"<%=r3%>>r3</option> 
+		</select>
+	</form>
 </body>
 </html>

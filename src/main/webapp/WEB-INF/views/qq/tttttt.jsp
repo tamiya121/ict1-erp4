@@ -57,6 +57,7 @@
 			var pwdObj = document.querySelector("#pwd");
 			var pwdCObj = document.querySelector("#pwdC");
 			var ageObj = document.querySelector("#age");
+			var emailObj = document.querySelector("#email");
 			
 			if (idObj.value.trim().length < 5) {
 				alert("ID를 5글자 이상 입력하세요");
@@ -76,10 +77,17 @@
 				pwdCObj.focus();
 				return false;
 			}
-			if (ageObj.value.trim().length < 130 ) {
+			if (ageObj.value > 130 || ageObj.value == 0) {
 				alert("0미만 130초과 불가");
 				ageObj.value = "";
 				ageObj.focus();
+				return false;
+			}
+			var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+			if (exptext.test(emailObj.value) == false) {
+				alert("이메일 형식에 맞게 입력해주세요.");
+				emailObj.value = "";
+				emailObj.focus();
 				return false;
 			}
 			
