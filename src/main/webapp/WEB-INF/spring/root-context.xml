@@ -58,11 +58,12 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSourceProxy" />
 	</bean>
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+	<tx:advice id="txAdvice"
+		transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="*" rollback-for="Exception" />
 		</tx:attributes>
-		
+
 	</tx:advice>
 
 	<aop:config>
@@ -71,18 +72,12 @@
 		<aop:advisor advice-ref="txAdvice"
 			pointcut-ref="txPointcut" />
 	</aop:config>
-	
-	<context:component-scan base-package="com.ict.erp.service" />
-	<context:component-scan base-package="com.ict.erp.dao" />
-	<context:component-scan base-package="com.ict.erp.aop" />
-	
-	<bean id="aet" class="com.ict.erp.dao.impl.NaverTransDAOImpl">
-		<property name="clientId" value="9rh501eOhfMUTbYwSjp5"></property>
-		<property name="clientSecret" value="nMfTy9SSmQ"></property>
-		<property name="clientIdAdd" value="X-Naver-Client-Id"></property>
-		<property name="clientSecretAdd" value="X-Naver-Client-Secret"></property>
-		<property name="apiURL" value="https://openapi.naver.com/v1/papago/n2mt"></property>
-		<property name="source" value="en"></property>
-		<property name="target" value="ko"></property>
-	</bean>
+
+	<context:component-scan
+		base-package="com.ict.erp.service" />
+	<context:component-scan
+		base-package="com.ict.erp.dao" />
+	<context:component-scan
+		base-package="com.ict.erp.aop" />
+
 </beans>
