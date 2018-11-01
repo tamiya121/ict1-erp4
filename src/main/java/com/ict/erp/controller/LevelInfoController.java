@@ -20,6 +20,11 @@ public class LevelInfoController {
 	@Autowired
 	private LevelInfoService lis;
 	
+	@RequestMapping(value="/",method=RequestMethod.GET)
+	public @ResponseBody String home() {
+		return "home";
+	}
+	
 	@RequestMapping(value="/linum",method=RequestMethod.GET)
 	public @ResponseBody Integer getLinum() {
 		return lis.getLinum();
