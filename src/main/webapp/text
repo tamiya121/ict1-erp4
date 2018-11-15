@@ -85,3 +85,47 @@ cd bin
 ./shutdown.sh
 ./startup.sh
 브라우져에 https://도메인명 입력해서 확인하기.
+
+
+
+
+
+https
+aws ec2
+linux
+TLS
+키 받아서 http에 연동
+
+
+
+
+(젠킨스는 빌드 앤 배포 정도?)
+수도 수 권한 주고
+yum update -y
+(업데이트 시간 좀 걸림)
+
+jenkins yum repository 검색해서 두번 째 클릭
+인스톨에 가면 밑에 거 찾을 수 있음(밑에 거 붙여넣기 하면 됨)
+
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+yum install jenkins
+
+위에 거 한 줄씩 붙여넣기
+
+service jenkins start
+(via ~로부터) <-명령어 아님
+
+내 도메인:8080 url창에 입력하면 젠킨스 페이지 하나 뜸
+
+젠킨스 페이지 빨간 줄 복사해서 푸티 입력창에 vi 띄우고 붙여넣기
+
+푸티창에 뜬 거 복사해서 젠킨스 페이지에 붙여넣기 하고 컨티뉴 누름
+
+인서트 어쩌구 선택
+
+어드민 계정 생성하고 잘 기억하삼
+
+
+
+
