@@ -29,7 +29,7 @@ public class LevelInfoController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@RequestMapping(value="/",method=RequestMethod.GET)
-	public @ResponseBody String home(Locale locale, Model model) {
+	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -38,7 +38,7 @@ public class LevelInfoController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
-		return "home126";
+		return "home";
 	}
 	
 	@RequestMapping(value="/linum",method=RequestMethod.GET)
