@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ict.erp.HomeController;
 import com.ict.erp.service.LevelInfoService;
 import com.ict.erp.vo.LevelInfo;
 
@@ -27,7 +26,7 @@ public class LevelInfoController {
 	@Autowired
 	private LevelInfoService lis;
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(LevelInfoController.class);
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
