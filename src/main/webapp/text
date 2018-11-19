@@ -68,7 +68,7 @@ cd bin
 브라우져에 파일명까지 있는 주소 복사해서 파일내용 나오는지 확인 해보고 되면 첫번째putty 엔터 쳐서 실행함.
 
 (TSL키 만들기)
-cd /etc/letsencrypt/live/도메인명
+cd /etc/letsencrypt/live/도메인명.
 openssl rsa -in privkey.pem -text > ict.key
 openssl x509 -inform PEM -in fullchain.pem -out ict.crt
 openssl pkcs12 -export -in ict.crt -inkey ict.key -out ict.p12 -name tomcat
